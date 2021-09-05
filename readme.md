@@ -1,6 +1,23 @@
 # DSP HW1
 <center> <font size=2> Jason < 2020/10 > </font> </center>
 
+original hackmd : https://hackmd.io/@jasonho610/H1ID5P6uw
+
+## Problem
+產生符合以下spec (specification)的digital waveform file
+1. Sampling rate: 16000 Hz
+2. Bit per sample (bit depth): linear 16 bits
+3. Number of channels: 1
+4. File format: windows PCM (*.wav)，也就是音檔可以用media player直接播放
+5. 產生符合以下continuous-time signal數學式的digital waveform file：
+    - x(t) = 0.1 * cos(2*pi*k*f*t) * w(t)
+    - f = 110 Hz
+    - k = 0, 1, 2, 4, 8, 16, 32, 64
+    - w(t) = 1 for t = 0.00 ~ 0.50 second, w(t) = 0 for otherwise
+    - x(t) 的值如果是1，就是是對應到16bit表示的最大positive value，也就是2^(15) -1，如果x(t) = -1，就是是對應到16bit表示的最小negative value，也就是 (-1) * 2^(15) 
+    - 使用一支c語言撰寫程式產生波形，產生的波形分別儲存為 wave_0Hz.wav, wave_110Hz.wav, wave_220Hz.wav…wave_7040Hz.wav
+
+
 ## Wav file format
 ![](https://i.imgur.com/273VmEh.png)
 ### RIFF
